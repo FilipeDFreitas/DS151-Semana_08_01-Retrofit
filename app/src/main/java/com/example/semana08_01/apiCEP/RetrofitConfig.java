@@ -9,11 +9,15 @@ public class RetrofitConfig {
 
     public RetrofitConfig(){
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("https://viacep.com.br/ws/")
+                //.baseUrl("https://viacep.com.br/ws/")
+                .baseUrl("https://jsonplaceholder.typicode.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
     public CEPService getCEPService(){
         return this.retrofit.create(CEPService.class);
+    }
+    public DataService getDataService(){
+        return this.retrofit.create(DataService.class);
     }
 }
